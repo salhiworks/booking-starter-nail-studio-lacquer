@@ -1,0 +1,9 @@
+/*
+ * The packaged dashboard keeps its own design. The site brands it with one
+ * thing — its accent, per appearance (INTEGRATION.md §10). Lacquer's cherry:
+ * the deep lacquer with white text in Light; in Dark, the site's pale blush
+ * (the hero's italics) with cherry-black text. Owner monogram, primary buttons,
+ * Confirm, focus rings, selection and the schedule's "now" line all follow it.
+ */
+:root .pbe-admin[data-mode='light'] { --pbe-accent: #7a1424; --pbe-accent-text: #ffffff; } /* ≈10.7:1 on white; white text ≈10.7:1 */
+:root .pbe-admin[data-mode='dark']  { --pbe-accent: #f0bcc0; --pbe-accent-text: #2a0910; } /* ≈11:1 on a near-black dashboard; text ≈11:1 */

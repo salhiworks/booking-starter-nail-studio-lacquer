@@ -1,0 +1,200 @@
+/*
+ * Lunula Nail Studio — design tokens (Lacquer).
+ * The ONLY file with raw colours, fonts, sizes and spacing (see DESIGN.md).
+ * Every other stylesheet uses these custom properties.
+ *
+ * The idea: a bottle of polish. One deep lacquer colour (the owner's accent,
+ * cherry by default) poured over a bone-white page, with a soft nude and a
+ * black-cherry "night" for the gallery and the footer.
+ */
+:root {
+  /* ── Colour ─────────────────────────────────────────────── */
+  --paper: #f6efe8;          /* bone — the page */
+  --raised: #fcf9f5;         /* porcelain — inputs, the booking sheet, cards */
+  --oat: #eee2d7;            /* nude — Good to know, the booking summary, chips */
+  --oat-deep: #e3d3c5;       /* deeper nude — frames while loading, skeletons */
+  --sage-100: #f4e6e1;       /* blush wash — quiet highlights */
+  --sage-200: #ecd3cf;       /* blush tint — sample tags, done steps */
+  --rule: #e0d0c5;           /* hairlines (decorative) */
+  --line-input: #8a7570;     /* input and icon-button borders (≥ 3:1 on bone, porcelain, nude) */
+  --line-soft: #cfbbb1;      /* borders of choice buttons named by their own text */
+  --mark: #3d7a58;           /* the "open" dot (≥ 3:1) */
+  --ink: #241417;            /* black cherry ink — 15.6:1 on bone */
+  --ink-soft: #46363a;       /* 10.3:1 */
+  --muted: #6b5a5a;          /* 6.0:1 on bone, 5.3:1 on nude */
+  --clay: #9a2c12;           /* errors only (with an icon or words, never colour alone) */
+  --scrim: rgb(36 20 23 / 0.08);
+  --veil: rgb(36 12 18 / 0.52); /* the page behind the booking sheet */
+  --clay-wash: color-mix(in oklab, var(--clay) 6%, var(--raised));
+  --mark-halo: color-mix(in oklab, var(--mark) 22%, transparent);
+
+  /* Night: the gallery and the footer (never owner-editable). */
+  --forest: #22090f;         /* black cherry */
+  --forest-2: #34141b;
+  --on-forest: #f6ece6;      /* 16.4:1 on night */
+  --on-forest-soft: #d3bfbc; /* 10.6:1 */
+  --forest-line: #4f2a31;    /* decorative rules on night */
+  --forest-glow: #f0bcc0;    /* blush numerals and italics on night, 10.7:1 */
+
+  /* Owner-editable (brand.accent) — set on <html> at run time. */
+  --accent: #7a1424;
+  --accent-strong: color-mix(in oklab, var(--accent) 78%, var(--ink));
+  --accent-deep: color-mix(in oklab, var(--accent) 62%, #000);
+  --accent-tint: color-mix(in oklab, var(--accent) 12%, var(--raised));
+  --accent-wash: color-mix(in oklab, var(--accent) 7%, var(--raised));
+  --on-accent: #f6efe8;      /* bone on cherry, 11:1 (the editor checks any new accent at 4.5:1) */
+  /* A pale tint of the lacquer for italics and small marks on it: blush on cherry. */
+  --accent-glow: color-mix(in oklab, var(--accent) 22%, #fff3ef);
+  --on-accent-soft: color-mix(in oklab, var(--on-accent) 82%, var(--accent));
+  /* The gloss on a drop of polish (decorative). */
+  --gloss: rgb(255 255 255 / 0.55);
+
+  /* ── Type ───────────────────────────────────────────────── */
+  --font-display: 'Fraunces Variable', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-text: 'Instrument Sans Variable', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+
+  --text-micro: 0.75rem;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-md: clamp(1rem, 0.97rem + 0.12vw, 1.0625rem);
+  --text-lg: clamp(1.125rem, 1.06rem + 0.3vw, 1.3125rem);
+  --text-xl: clamp(1.375rem, 1.22rem + 0.66vw, 1.8125rem);
+  --text-2xl: clamp(2.25rem, 1.55rem + 2.8vw, 4rem);
+  --text-3xl: clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem);
+  --text-hero: clamp(2.625rem, 1.05rem + 4.4vw, 5.5rem);
+  --text-numeral: clamp(2.5rem, 2rem + 2vw, 3.75rem);
+  --text-code: clamp(1.875rem, 1.6rem + 1.2vw, 2.375rem);
+  --text-service: clamp(1.375rem, 1.18rem + 0.7vw, 1.875rem);
+  --text-price: clamp(1.25rem, 1.12rem + 0.45vw, 1.5625rem);
+
+  --leading-display: 0.98;
+  --leading-heading: 1.06;
+  --leading-body: 1.6;
+  --leading-tight: 1.28;
+
+  --tracking-display: -0.022em;
+  --tracking-eyebrow: 0.15em;
+  --tracking-button: 0.01em;
+  --tracking-code: 0.42em;
+  --tracking-tag: 0.04em;
+  --tracking-wordmark: -0.045em;
+
+  --weight-text: 400;
+  --weight-strong: 580;
+  --weight-display: 360;
+
+  /* Heading style (brand.headings): editorial (default) | sharp | sans */
+  --heading-font: var(--font-display);
+  --heading-weight: var(--weight-display);
+  --heading-tracking: var(--tracking-display);
+  --heading-italic-weight: 340;
+
+  --measure: 62ch;
+  --measure-lede: 40ch;
+  --measure-title: 12ch;
+
+  /* ── Space ──────────────────────────────────────────────── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8.5rem;
+
+  --gutter: clamp(1.25rem, 5.4vw, 5.5rem);
+  --section-pad: clamp(4.5rem, 2.4rem + 6.4vw, 9rem);
+  --desk-pad: clamp(var(--space-5), 4vw, var(--space-8));
+  --page-max: 84rem;
+  --header-height: 4.5rem;
+  --sheet-width: 66rem;      /* the booking sheet from 960 px */
+
+  /* ── Sizes ──────────────────────────────────────────────── */
+  --tap: 2.75rem;            /* 44 px — the smallest tap target */
+  --control: 3.25rem;        /* 52 px — buttons and inputs */
+  --chip: 3rem;              /* 48 px — time chips */
+  --day-cell: 2.875rem;      /* 46 px — month grid cells */
+  --day-card-w: 4rem;        /* 64 px — phone day rail */
+  --day-card-h: 5.25rem;     /* 84 px */
+  --dot: 0.3125rem;          /* 5 px — the "open" mark */
+  --drop: 0.75rem;           /* 12 px — a drop of lacquer (bullets, shelf marks) */
+  --hairline: 1px;
+  --rule-strong: 2px;
+  --focus-width: 2px;
+  --focus-offset: 3px;
+  --logo-height: 2rem;
+  --logo-max: 12rem;
+  --summary-width: 18.5rem;
+  --time-min: 6.75rem;       /* a time chip's narrowest width */
+  --label-col: 7rem;
+  --form-max: 34rem;
+  --code-width: 15rem;
+  --code-height: 4rem;
+  --sticky-offset: 6.5rem;   /* room above a step heading for the phone summary strip */
+  --hero-detail: clamp(7rem, 12vw, 11.5rem);
+  --menu-aside: 19rem;       /* the shelf list beside the menu */
+  --service-thumb: 4.5rem;   /* an owner's service photo in the menu */
+  --status-dot: 0.5rem;
+  --skeleton-block: 20rem;
+  --skeleton-times: 9rem;
+
+  /* ── Shape ──────────────────────────────────────────────── */
+  /* Lacquer is glossy, not soft: square corners, and the nail's own curve kept for one shape. */
+  --radius-0: 0;
+  --radius-1: 2px;
+  --radius-2: 4px;           /* the booking sheet, photo prints */
+  --radius-nail: 999px 999px var(--radius-1) var(--radius-1) / 46% 46% var(--radius-1) var(--radius-1); /* a nail tip — the drop marks only */
+  --radius-pill: 999px;
+  --shadow-soft: 0 -0.5rem 1.5rem var(--scrim);
+  --shadow-top: 0 0.5rem 1.5rem var(--scrim);
+  --shadow-print: 0 1.5rem 3rem -1.25rem rgb(36 12 18 / 0.45);
+  --shadow-sheet: -1.5rem 0 4rem rgb(36 12 18 / 0.24);
+
+  /* ── Motion ─────────────────────────────────────────────── */
+  --dur-quick: 160ms;
+  --dur-step: 280ms;
+  --dur-enter: 560ms;
+  --dur-photo: 1100ms;
+  --dur-sheet: 420ms;
+  --stagger: 60ms;
+  --dur-shimmer: 1600ms;
+  --dur-spin: 900ms;
+  --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.65, 0, 0.35, 1);
+  --rise: 0.75rem;
+  --settle-scale: 1.04;
+
+  /* ── Layers ─────────────────────────────────────────────── */
+  --layer-sticky: 5;
+  --layer-banner: 10;
+  --layer-header: 8;
+}
+
+:root[data-headings='sharp'] {
+  --heading-weight: 290;
+  --heading-italic-weight: 280;
+  --heading-tracking: -0.03em;
+}
+
+:root[data-headings='sans'] {
+  --heading-font: var(--font-text);
+  --heading-weight: 460;
+  --heading-italic-weight: 460;
+  --heading-tracking: -0.035em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-quick: 1ms;
+    --dur-step: 1ms;
+    --dur-enter: 1ms;
+    --dur-photo: 1ms;
+    --dur-sheet: 1ms;
+    --stagger: 0ms;
+    --rise: 0px;
+    --settle-scale: 1;
+  }
+}
