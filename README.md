@@ -19,7 +19,7 @@ footer; Fraunces with soft italics over Instrument Sans; close, warm photography
 finished nails; the studio's name set very large along the bottom of the first screen.
 
 Booking runs on [`@profitstudio/booking-engine`](https://www.npmjs.com/package/@profitstudio/booking-engine)
-**2.0.0-beta.3** (pinned) with your own Supabase project and Resend for email.
+**2.0.0-beta.4** (pinned) with your own Supabase project and Resend for email.
 
 ## 1. Try it (no accounts needed)
 
