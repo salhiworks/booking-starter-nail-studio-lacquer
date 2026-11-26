@@ -35,7 +35,7 @@ sets you made.
 
 | Package | Licence | Notes |
 |---|---|---|
-| `@profitstudio/booking-engine` 2.0.0-beta.4 | MIT | The booking engine and the packaged dashboard |
+| `@profitstudio/booking-engine` 2.0.0 | MIT | The booking engine and the packaged dashboard |
 | `react`, `react-dom` | MIT | |
 | `@fontsource-variable/fraunces`, `@fontsource-variable/instrument-sans` | OFL-1.1 | Typefaces |
 
