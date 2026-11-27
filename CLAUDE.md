@@ -3,7 +3,7 @@
 A one-page booking website for a nail & beauty studio, shipped as **Lunula Nail
 Studio** (a fictional studio in Silver Lake, Los Angeles) for the owner to make
 their own. Its identity lives in `src/site.config.ts`; `CUSTOMIZE.md` is the prompt
-that personalizes it. Built around **@profitstudio/booking-engine** **2.0.0**
+that personalizes it. Built around **@profitstudio/booking-engine** **2.0.1**
 (pinned; lock in `booking-engine.lock.json`). The engine owns booking; this
 project owns the public design.
 

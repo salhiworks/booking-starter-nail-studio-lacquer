@@ -4,7 +4,7 @@ import type { Service } from '@profitstudio/booking-engine';
 /**
  * The menu's shelves.
  *
- * The engine (2.0.0) has no service categories and no per-service
+ * The engine (2.0.1) has no service categories and no per-service
  * metadata, and a service's id is a database UUID this site cannot know when
  * it is built — so the shelf is read from the service's own engine data:
  *
